@@ -28,7 +28,7 @@ The dataset includes the following files:
 
 - 'README.md'
 
-- 'code_book.txt'
+- 'code_book.txt': this file
 
 - 'run_analysis.R': R-script code
 
@@ -45,7 +45,7 @@ For each grouped record (row) the data in 'tidydata.txt' has four columns:
 
 - "subject_id": with the volunteer identifier
 
-- "variable": a feature variable name
+- "variable": a feature variable name (see CAUTION below)
 
 - "mean": the corresponding mean for the grouped values determined by the three previous columns
 
@@ -54,3 +54,14 @@ More detailed information about features in:
 - 'UCI HAR Dataset/features_info.txt'
 
 The complete list of variables of each feature vector is available in 'features.txt'
+
+CAUTION: feature names format changed:
+======================================
+
+Some of the features listed in 'UCI HAR Dataset/features.txt' are repeated (e.g. "fBodyAcc-bandsEnergy()-1,8" in rows: 303, 317, 331) indicating repetition of measurement. This can be a problem when giving names to the columns, which should have unique names, in an intermediate step.
+
+The code: read.table("path-to-file", col.names=features$names)
+
+takes care of that through the default parameter-value: 'check.names = TRUE' (see ?read.table).
+
+The features are checked and renamed if necessary to ensure that they are syntactically valid variable names in a convenient format. To ensure that there are no duplicates convenient suffixes (.1 .2 .3 ...) may be added.
