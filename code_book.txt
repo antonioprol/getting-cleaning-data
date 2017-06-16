@@ -58,10 +58,12 @@ The complete list of variables of each feature vector is available in 'features.
 CAUTION: feature names format changed:
 ======================================
 
-Some of the features listed in 'UCI HAR Dataset/features.txt' are repeated (e.g. "fBodyAcc-bandsEnergy()-1,8" in rows: 303, 317, 331) indicating repetition of measurement. This can be a problem when giving names to the columns, which should have unique names, in an intermediate step.
+Some of the features listed in 'UCI HAR Dataset/features.txt' are repeated (e.g. "fBodyAcc-bandsEnergy()-1,8" in rows: 303, 317, 331)
+indicating repetition of measurement. This can be a problem when giving names to the columns, which should have unique names, in an
+intermediate step.
 
 The code: read.table("path-to-file", col.names=features$names)
+takes care of that through the default parameter=value: 'check.names = TRUE' (see ?read.table).
 
-takes care of that through the default parameter-value: 'check.names = TRUE' (see ?read.table).
-
-The features are checked and renamed if necessary to ensure that they are syntactically valid variable names in a convenient format. To ensure that there are no duplicates convenient suffixes (.1 .2 .3 ...) may be added.
+The features are checked and renamed if necessary to ensure that they are syntactically valid variable names in a convenient format.
+To ensure that there are no duplicates, convenient suffixes (.1 .2 .3 ...) may be added.
