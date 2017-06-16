@@ -27,6 +27,8 @@ At this point we get a data frame (data) with dimensions: 10,299 × 563
 
 ### 3.1 Selecting all features with 'mean' or 'std' in their names, with either upper or lower case
 
+Using matches("mean|std")  -  ‘matches(x, ignore.case = TRUE)’ by default
+
 dim(data_s):  10,299 × 88
 
 ### 3.2 ... and melting all the 'features' columns to obtain a tidy data set (dataMelt)
