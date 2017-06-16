@@ -66,4 +66,5 @@ The code: read.table("path-to-file", col.names=features$names)
 takes care of that through the default parameter=value: 'check.names = TRUE' (see ?read.table).
 
 The features are checked and renamed if necessary to ensure that they are syntactically valid variable names in a convenient format.
-To ensure that there are no duplicates, convenient suffixes (.1 .2 .3 ...) may be added.
+To ensure that there are no duplicates, convenient suffixes (.1 .2 .3 ...) may be added, though this is not an important issue in our
+particular project.
