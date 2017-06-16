@@ -3,7 +3,13 @@ This is the repository for the 'Getting and Cleaning Data' Course Project
 
 Student: antonioprol
 
-## 'run_analysis.R'. Steps:
+## 'run_analysis.R'
+
+Script with the R-code necessary to obtain the final data set from the downloaded raw files
+
+Read 'codebook.txt' for more details.
+
+Steps:
 
 ### 1. Reading the necessary files and loading into objects
 
@@ -35,6 +41,6 @@ dim(data_s):  10,299 × 88
 
 dim(dataMelt): 885,714 × 4
 
-### 4. Obtaining the final tidy dataset (dataMelt_g) with the average of each variable for each activity and each subject
+### 4. Obtaining the final tidy dataset (tidydata) with the average of each variable for each activity and each subject
 
-dim(dataMelt_g): 15,480 x 4
+dim(tidydata): 15,480 x 4

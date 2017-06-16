@@ -1,4 +1,3 @@
-setwd("./getting-cleaning-data")  # wd for the 'Getting and Cleaning Data' Course Project
 library(dplyr)
 library(reshape2)
 dpathbase <- "UCI HAR Dataset/"
@@ -27,4 +26,5 @@ mvars <- names(data_s)[!(names(data_s) %in% c("activity", "subject_id"))]  # all
 dataMelt <- tbl_df(melt(data_s, id=c("activity", "subject_id"), measure.vars=mvars))
 
 # Final tidy dataset
-dataMelt_g <- dataMelt %>% group_by(activity, subject_id, variable) %>% summarize(mean=mean(value))
+tidydata <- dataMelt %>% group_by(activity, subject_id, variable) %>% summarize(mean=mean(value))
+write.table(tidydata, file = "tidydata.txt", row.names=FALSE)
